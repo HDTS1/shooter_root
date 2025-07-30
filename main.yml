@@ -6,3 +6,4 @@
 
   roles:
     - apt_upgrade
+    - install_htop
