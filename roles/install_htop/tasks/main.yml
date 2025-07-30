@@ -4,14 +4,14 @@
 - name: Install htop (process monitor)
   apt:
     name: htop
-    state: absent
+    state: present
     update_cache: yes  # Ensures apt update runs first
 
-#- name: Verify htop binary exists
-#  command: which htop
-#  register: htop_path
-#  changed_when: false
+- name: Verify htop binary exists
+  command: which htop
+  register: htop_path
+  changed_when: false
 
-#- name: Show htop location (debug)
-#  debug:
-#    msg: "htop is installed at {{ htop_path.stdout }}"
+- name: Show htop location (debug)
+  debug:
+    msg: "htop is installed at {{ htop_path.stdout }}"
